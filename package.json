@@ -8,7 +8,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "db:new-migrate": "prisma migrate dev",
-    "db:client": "prisma generate"
+    "db:client": "prisma generate",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "5.5.2",
