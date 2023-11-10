@@ -2,10 +2,17 @@
 
 import type { PropsWithChildren, ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
 
-const queryClient = new QueryClient();
+export function TanStackQuery({ children }: PropsWithChildren): ReactElement {
+  const [queryClient] = useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 15_000
+      }
+    }
+  }));
 
-export function Providers({ children }: PropsWithChildren): ReactElement {
   return (
     <QueryClientProvider client={queryClient}>
       {children}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren, ReactElement } from "react";
 import { Inter } from "next/font/google";
-import { Providers } from "#/lib/providers/tanstack-query";
+import { TanStackQuery } from "#/lib/providers/tanstack-query";
 import "#/lib/styles/tailwind.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,9 +15,9 @@ export default function Layout({ children }: PropsWithChildren): ReactElement {
   return (
     <html>
       <body className={`text-white bg-black flex items-center justify-center h-screen ${inter.className}`}>
-        <Providers>
+        <TanStackQuery>
           {children}
-        </Providers>
+        </TanStackQuery>
       </body>
     </html>
   );

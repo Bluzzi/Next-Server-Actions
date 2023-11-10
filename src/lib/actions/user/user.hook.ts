@@ -1,11 +1,14 @@
+import type { UndefinedInitialDataOptions } from "@tanstack/react-query";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createUser, getUsers, removeUser } from ".";
 
+export const getUsersQuery: UndefinedInitialDataOptions = {
+  queryKey: ["getUsers"],
+  queryFn: () => getUsers()
+};
+
 export function useGetUsers() {
-  return useQuery({
-    queryKey: ["getUsers"],
-    queryFn: () => getUsers()
-  });
+  return useQuery(getUsersQuery);
 }
 
 export function useCreateUser() {
