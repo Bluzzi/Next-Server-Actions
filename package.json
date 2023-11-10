@@ -39,6 +39,9 @@
       "@bluzzi",
       "next/core-web-vitals"
     ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off"
+    },
     "ignorePatterns": [
       "prisma/generated/*"
     ]
