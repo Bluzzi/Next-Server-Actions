@@ -13,7 +13,7 @@ export default function Home(): ReactElement {
 
   const { status, data } = useQuery({
     queryKey: ["getUsers"],
-    queryFn: async() => await getUsers()
+    queryFn: () => getUsers()
   });
 
   const create = useMutation({
