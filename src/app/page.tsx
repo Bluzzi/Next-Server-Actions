@@ -5,7 +5,7 @@ import { HydrationBoundary } from "#/lib/providers/hydration-boundary";
 
 export default function Home(): ReactElement {
   return (
-    <HydrationBoundary queries={[getUsersQuery]}>
+    <HydrationBoundary queries={[getUsersQuery()]}>
       <HomeClient />
     </HydrationBoundary>
   );
