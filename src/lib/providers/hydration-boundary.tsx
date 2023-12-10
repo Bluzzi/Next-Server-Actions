@@ -9,9 +9,7 @@ type Props = PropsWithChildren & {
 export async function HydrationBoundary({ queries, children }: Props): Promise<ReactElement> {
   const queryClient = new QueryClient();
 
-  for (const query of queries) {
-    await queryClient.prefetchQuery(query);
-  }
+  await Promise.all(queries.map(query => queryClient.prefetchQuery(query)))
 
   return (
     <HB state={dehydrate(queryClient)}>
